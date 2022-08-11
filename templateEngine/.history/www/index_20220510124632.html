@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="/xuni/bundle.js"></script>
+  
+  <script>
+    let templateStr = `
+    <ul>
+      {{#arr}}
+        <li>
+          <div>{{name}}的爱好</div>
+          {{#hobbies}}
+          <ol>
+            {{.}}
+          </ol>
+          {{/hobbies}}
+        </li>
+      {{/arr}}
+    </ul>
+    `
+    let data = {
+      arr: [
+        {name: 'cqy', hobbies: ['篮球','敲代码']},
+        {name: 'kyrie', hobbies: ['篮球','高尔夫']}
+      ]
+    }
+    //let templateStr = '我是{{somebody}}门徒'
+    //let data = {
+    //  somebody: '欧文'
+    //}
+    TemplateEngine.render(templateStr, data)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="container"></div>
+  <script src="js/mustache.js"></script>
+  <script>
+    console.log(Mustache);
+    let data = {
+      //arr: [
+      //  {name: 'cqy', sex: 'man', hobbies: ['打球','敲代码']},
+      //  {name: 'kyrie', sex: 'man', hobbies: ['打球','高尔夫']},
+      //]
+      show: false
+    }
+    //let templateStr = `
+    //<ul>
+    //  {{#arr}}
+    //    <li>
+    //      <div>{{name}}的爱好</div>
+    //      {{#hobbies}}
+    //      <ol>
+    //        {{.}}
+    //      </ol>
+    //      {{/hobbies}}
+    //    </li>
+    //  {{/arr}}
+    //</ul>
+    //`
+    let templateStr = `
+      <div>
+        <p>哈哈哈</p>
+        {{#show}}
+          <div>我没有被展示</div>
+        {{/show}}
+      </div>
+    `
+    Mustache.render(templateStr, data)
+  </script>
+</body>
+</html>
